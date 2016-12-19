@@ -11,7 +11,7 @@ ENV https_proxy=${HTTPS_PROXY}
 RUN apt-get update
 RUN apt-get install -y wget curl make g++ apt-transport-https libmysqlclient-dev openjdk-8-jdk
 RUN wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | apt-key add -
-RUN echo "deb https://artifacts.elastic.co/packages/5.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-5.x.list
+RUN echo "deb https://artifacts.elastic.co/packages/5.x/apt stable main" | tee -a /etc/apt/sources.list.d/elastic-5.x.list
 RUN apt-get update
 RUN apt-get install elasticsearch kibana
 
